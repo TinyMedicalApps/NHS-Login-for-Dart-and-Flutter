@@ -1,0 +1,22 @@
+name: nhs_login
+description: A starting point for Dart libraries or applications.
+version: 0.0.1
+# homepage: https://www.example.com
+# author: long1eu <email@example.com>
+
+environment:
+  sdk: '>=2.1.0 <3.0.0'
+
+dependencies:
+  path: ^1.4.1
+  jaguar_jwt: ^2.1.6
+  user_preferences: ^0.1.1+4
+  built_value: ^6.3.0
+  built_collection: ^4.1.0
+  rxdart: ^0.21.0
+
+dev_dependencies:
+  pedantic: ^1.0.0
+  built_value_generator: ^6.3.0
+  build_runner: ^1.2.3
+  test: ^1.0.0
