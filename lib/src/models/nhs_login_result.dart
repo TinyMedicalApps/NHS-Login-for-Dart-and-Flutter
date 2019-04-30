@@ -10,8 +10,7 @@ import 'package:nhs_login/src/models/userinfo/nhs_userinfo.dart';
 
 part 'nhs_login_result.g.dart';
 
-abstract class NhsLoginResult
-    implements Built<NhsLoginResult, NhsLoginResultBuilder> {
+abstract class NhsLoginResult implements Built<NhsLoginResult, NhsLoginResultBuilder> {
   factory NhsLoginResult([void updates(NhsLoginResultBuilder b)]) {
     return (_$NhsLoginResult().rebuild((NhsLoginResultBuilder b) {
       b
@@ -20,8 +19,7 @@ abstract class NhsLoginResult
     }));
   }
 
-  factory NhsLoginResult.fromJson(Map<String, dynamic> json) =>
-      serializers.deserializeWith(serializer, json);
+  factory NhsLoginResult.fromJson(Map<String, dynamic> json) => serializers.deserializeWith(serializer, json);
 
   NhsLoginResult._();
 
@@ -33,14 +31,12 @@ abstract class NhsLoginResult
   @nullable
   NhsUserinfo get userinfo;
 
-  bool get isError =>
-      authentication.isError || token.isError || userinfo.isError;
+  bool get isError => authentication.isError || (token?.isError ?? false) || (userinfo?.isError ?? false);
 
   BuiltMap<String, String> get otherParams;
 
   @memoized
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this);
 
-  static Serializer<NhsLoginResult> get serializer =>
-      _$nhsLoginResultSerializer;
+  static Serializer<NhsLoginResult> get serializer => _$nhsLoginResultSerializer;
 }
