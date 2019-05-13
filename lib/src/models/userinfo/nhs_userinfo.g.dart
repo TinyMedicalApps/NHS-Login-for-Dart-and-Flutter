@@ -586,7 +586,7 @@ class NhsUserinfoBuilder implements Builder<NhsUserinfo, NhsUserinfoBuilder> {
 
   String _gpOdsCode;
   String get gpOdsCode => _$this._gpOdsCode;
-  set gpOdsCode(String sub) => _$this._gpOdsCode = gpOdsCode;
+  set gpOdsCode(String gpOdsCode) => _$this._gpOdsCode = gpOdsCode;
 
 
   String _familyName;
