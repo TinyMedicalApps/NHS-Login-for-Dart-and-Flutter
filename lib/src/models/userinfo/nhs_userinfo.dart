@@ -36,6 +36,8 @@ abstract class NhsUserinfo
   @BuiltValueField(wireName: 'sub')
   String get sub;
 
+  @BuiltValueField(wireName: 'gp_ods_code')
+  String get gpOdsCode;
   /// Surname(s) or last name(s) of the End-User
   /// {family_name}
   @nullable
@@ -152,6 +154,7 @@ abstract class NhsUserinfo
   @nullable
   @BuiltValueField(wireName: 'gp_registration_details')
   GpRegistrationDetails get gpRegistrationDetails;
+
 
   @override
   @nullable

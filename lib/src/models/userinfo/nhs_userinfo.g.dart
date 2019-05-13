@@ -32,7 +32,10 @@ class _$NhsUserinfoSerializer implements StructuredSerializer<NhsUserinfo> {
           specifiedType: const FullType(String)),
       'sub',
       serializers.serialize(object.sub, specifiedType: const FullType(String)),
+      'gpOdsCode',
+      serializers.serialize(object.gpOdsCode, specifiedType: const FullType(String)),
     ];
+
     if (object.familyName != null) {
       result
         ..add('family_name')
@@ -396,6 +399,8 @@ class _$NhsUserinfo extends NhsUserinfo {
   @override
   final String sub;
   @override
+  final String gpOdsCode;
+  @override
   final String familyName;
   @override
   final String givenName;
@@ -432,6 +437,7 @@ class _$NhsUserinfo extends NhsUserinfo {
       {this.issuer,
       this.audience,
       this.sub,
+      this.gpOdsCode,
       this.familyName,
       this.givenName,
       this.email,
@@ -475,6 +481,7 @@ class _$NhsUserinfo extends NhsUserinfo {
         issuer == other.issuer &&
         audience == other.audience &&
         sub == other.sub &&
+        gpOdsCode == other.gpOdsCode &&
         familyName == other.familyName &&
         givenName == other.givenName &&
         email == other.email &&
@@ -510,24 +517,27 @@ class _$NhsUserinfo extends NhsUserinfo {
                                                             $jc(
                                                                 $jc(
                                                                     $jc(
+                                                                      $jc(
                                                                         0,
                                                                         issuer
                                                                             .hashCode),
                                                                     audience
                                                                         .hashCode),
                                                                 sub.hashCode),
-                                                            familyName
+                                                              gpOdsCode
+                                                                  .hashCode),
+                                                          familyName
                                                                 .hashCode),
-                                                        givenName.hashCode),
-                                                    email.hashCode),
-                                                emailVerified.hashCode),
-                                            phoneNumber.hashCode),
-                                        phoneNumberVerified.hashCode),
-                                    birthdate.hashCode),
-                                address.hashCode),
-                            nhsNumber.hashCode),
-                        gpIntegrationCredentials.hashCode),
-                    delegations.hashCode),
+                                                      givenName.hashCode),
+                                                  email.hashCode),
+                                              emailVerified.hashCode),
+                                          phoneNumber.hashCode),
+                                      phoneNumberVerified.hashCode),
+                                  birthdate.hashCode),
+                              address.hashCode),
+                          nhsNumber.hashCode),
+                      gpIntegrationCredentials.hashCode),
+                  delegations.hashCode),
                 gpRegistrationDetails.hashCode),
             error.hashCode),
         errorDescription.hashCode));
@@ -539,6 +549,7 @@ class _$NhsUserinfo extends NhsUserinfo {
           ..add('issuer', issuer)
           ..add('audience', audience)
           ..add('sub', sub)
+          ..add('gp_ods_code', gpOdsCode)
           ..add('familyName', familyName)
           ..add('givenName', givenName)
           ..add('email', email)
@@ -571,6 +582,12 @@ class NhsUserinfoBuilder implements Builder<NhsUserinfo, NhsUserinfoBuilder> {
   String _sub;
   String get sub => _$this._sub;
   set sub(String sub) => _$this._sub = sub;
+
+
+  String _gpOdsCode;
+  String get gpOdsCode => _$this._gpOdsCode;
+  set gpOdsCode(String sub) => _$this._gpOdsCode = gpOdsCode;
+
 
   String _familyName;
   String get familyName => _$this._familyName;
@@ -648,6 +665,7 @@ class NhsUserinfoBuilder implements Builder<NhsUserinfo, NhsUserinfoBuilder> {
       _issuer = _$v.issuer;
       _audience = _$v.audience;
       _sub = _$v.sub;
+      _gpOdsCode = _$v.gpOdsCode;
       _familyName = _$v.familyName;
       _givenName = _$v.givenName;
       _email = _$v.email;
@@ -689,6 +707,7 @@ class NhsUserinfoBuilder implements Builder<NhsUserinfo, NhsUserinfoBuilder> {
               issuer: issuer,
               audience: audience,
               sub: sub,
+              gpOdsCode: gpOdsCode,
               familyName: familyName,
               givenName: givenName,
               email: email,
