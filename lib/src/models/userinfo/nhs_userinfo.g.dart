@@ -32,7 +32,7 @@ class _$NhsUserinfoSerializer implements StructuredSerializer<NhsUserinfo> {
           specifiedType: const FullType(String)),
       'sub',
       serializers.serialize(object.sub, specifiedType: const FullType(String)),
-      'gpOdsCode',
+      'gp_ods_code',
       serializers.serialize(object.gpOdsCode, specifiedType: const FullType(String)),
     ];
 
@@ -146,6 +146,10 @@ class _$NhsUserinfoSerializer implements StructuredSerializer<NhsUserinfo> {
           break;
         case 'sub':
           result.sub = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'gp_ods_code':
+          result.gpOdsCode = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'family_name':
